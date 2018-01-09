@@ -24,7 +24,8 @@ describe package('sublime-text') do
   it { should be_installed }
 end
 
-user = ENV['USER']
+#user = ENV['USER']
+user = 'root'
 
 describe directory("/home/#{user}/.config/sublime-text-3/Installed\ Packages") do
   it { should exist }
