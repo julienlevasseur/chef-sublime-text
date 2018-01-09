@@ -16,5 +16,6 @@ before_install:
   - gem install cookstyle
   - gem install foodcritic
 
-script: "cookstyle"
-script: "foodcritic ."
+script: 
+  - cookstyle
+  - foodcritic .

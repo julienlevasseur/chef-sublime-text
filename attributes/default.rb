@@ -8,11 +8,11 @@ default['sublime_text']['repo']['distribution'] = 'apt/stable/'
 
 default['sublime_text']['packages'] = [
   'Package Control',
-  'Neon Color Scheme'
+  'Neon Color Scheme',
 ]
 
 default['sublime_text']['syntax_specific'] = {
   'JSON' => {
     'color_scheme' => '"Packages/Neon Color Scheme/Neon.tmTheme"',
-  }
+  },
 }
