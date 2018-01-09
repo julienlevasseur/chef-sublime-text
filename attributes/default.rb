@@ -7,8 +7,10 @@ default['sublime_text']['repo']['key']['url'] = 'https://download.sublimetext.co
 default['sublime_text']['repo']['distribution'] = 'apt/stable/'
 
 default['sublime_text']['packages'] = [
-  'Package Control',
-  'Neon Color Scheme',
+  {
+    name: 'Neon Color Scheme',
+    url: 'https://github.com/MattDMo/Neon-color-scheme/archive/master.zip',
+  },
 ]
 
 default['sublime_text']['syntax_specific'] = {

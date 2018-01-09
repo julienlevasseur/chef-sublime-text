@@ -7,6 +7,7 @@
 node['sublime_text']['users'].each do |user|
   node['sublime_text']['syntax_specific'].each do |language, options|
     template "/home/#{user}/.config/sublime-text-3/Packages/User/#{language}.sublime-settings" do
+      cookbook 'sublime_text'
       source 'language.sublime-settings.erb'
       owner user
       group user

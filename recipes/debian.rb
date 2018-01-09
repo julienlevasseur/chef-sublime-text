@@ -19,6 +19,7 @@ if node['sublime_text']['state'] == :present
   end
 
   template '/etc/apt/sources.list.d/sublime-text.list' do
+    cookbook 'sublime_text'
     source 'repo.erb'
     owner 'root'
     group 'root'
@@ -39,37 +40,6 @@ if node['sublime_text']['state'] == :present
     action :install
   end
 
-  # Package Control plugin management
-  node['sublime_text']['users'].each do |user|
-    directory "/home/#{user}/.config/sublime-text-3/Installed Packages" do
-      action :create
-      recursive true
-    end
-
-    remote_file "/home/#{user}/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" do
-      source 'https://packagecontrol.io/Package%20Control.sublime-package'
-      owner user
-      group user
-      mode '0644'
-      action :create
-    end
-
-    directory "/home/#{user}/.config/sublime-text-3/Packages/User" do
-      action :create
-      recursive true
-    end
-
-    template "/home/#{user}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" do
-      source 'Package_Control.sublime-settings.erb'
-      owner user
-      group user
-      mode '0644'
-      variables(
-        packages: node['sublime_text']['packages']
-      )
-    end
-  end
-
 elsif node['sublime_text']['state'] == :absent
 
   file '/etc/apt/sources.list.d/sublime-text.list' do
@@ -78,25 +48,5 @@ elsif node['sublime_text']['state'] == :absent
 
   package 'sublime-text' do
     action :remove
-  end
-
-  node['sublime_text']['users'].each do |user|
-    directory "/home/#{user}/.config/sublime-text-3/Installed Packages" do
-      action :delete
-      recursive true
-    end
-
-    file "/home/#{user}/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" do
-      action :delete
-    end
-
-    file "/home/#{user}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" do
-      action :delete
-    end
-
-    directory "/home/#{user}/.config/sublime-text-3/Packages/User" do
-      action :delete
-      recursive true
-    end
   end
 end
