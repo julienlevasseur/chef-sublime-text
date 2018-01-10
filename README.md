@@ -38,13 +38,23 @@ default['sublime_text']['state'] = :absent
 
 2. Search for the package name you want to install
 
+![](https://raw.githubusercontent.com/julienlevasseur/chef-sublime-text/master/screenshot_01.png)
+
 3. Click on the link to access the package details page
+
+![](https://raw.githubusercontent.com/julienlevasseur/chef-sublime-text/master/screenshot_02.png)
 
 4. Click on the homepage link
 
+![](https://raw.githubusercontent.com/julienlevasseur/chef-sublime-text/master/screenshot_03.png)
+
 5. Click on "Clone or download" green button
 
+![](https://raw.githubusercontent.com/julienlevasseur/chef-sublime-text/master/screenshot_04.png)
+
 6. Right-click on Download ZIP button, then select "copy link location"
+
+![](https://raw.githubusercontent.com/julienlevasseur/chef-sublime-text/master/screenshot_05.png)
 
 7. Add the `name` and the `url` to `['sublime_text']['packages']` attribute:
 
