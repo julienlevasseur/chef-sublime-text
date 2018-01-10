@@ -20,3 +20,37 @@ To uninstall it and keeping it removed :
 default['sublime_text']['state'] = :absent
 ```
 
+# Attributes
+
+| Attribute                                  | Type   | Default value                                                                                          | Description |
+| ------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------ | ----------- |
+| `['sublime_text']['state']`                | Symbol | `:present`                                                                                             | Sublime Text installation state |
+| `['sublime_text']['users']`                | List   | []                                                                                                     | Usersfor who Sublime have to be configured |
+| `['sublime_text']['repo']['uri']`          | String | https://download.sublimetext.com/                                                                      | Download URL |
+| `['sublime_text']['repo']['key']['url']`   | String | https://download.sublimetext.com/sublimehq-pub.gpg                                                     | Repo key URL |
+| `['sublime_text']['repo']['distribution']` | String | apt/stable/                                                                                            | Repository's distribution |
+| `['sublime_text']['packages']`             | List   | [{name: 'Neon Color Scheme', url: 'https://github.com/MattDMo/Neon-color-scheme/archive/master.zip',}] | Packages to isntall |
+| `['sublime_text']['syntax_specific']`      | Hash   | {JSON: {color_scheme: '"Packages/Neon Color Scheme/Neon.tmTheme"',},}                                  | Syntax specific configurations |
+
+# How to add a package to the intalled packages list
+
+1. Go to https://packagecontrol.io
+
+2. Search for the package name you want to install
+
+3. Click on the link to access the package details page
+
+4. Click on the homepage link
+
+5. Click on "Clone or download" green button
+
+6. Right-click on Download ZIP button, then select "copy link location"
+
+7. Add the `name` and the `url` to `['sublime_text']['packages']` attribute:
+
+```json
+{
+    "name": "Terraform",
+    "url": "https://github.com/alexlouden/Terraform.tmLanguage/archive/master.zip"
+}
+```

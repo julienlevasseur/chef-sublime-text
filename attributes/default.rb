@@ -14,7 +14,7 @@ default['sublime_text']['packages'] = [
 ]
 
 default['sublime_text']['syntax_specific'] = {
-  'JSON' => {
-    'color_scheme' => '"Packages/Neon Color Scheme/Neon.tmTheme"',
+  JSON: {
+    color_scheme: '"Packages/Neon Color Scheme/Neon.tmTheme"',
   },
 }
