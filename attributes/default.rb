@@ -6,12 +6,7 @@ default['sublime_text']['repo']['uri'] = 'https://download.sublimetext.com/'
 default['sublime_text']['repo']['key']['url'] = 'https://download.sublimetext.com/sublimehq-pub.gpg'
 default['sublime_text']['repo']['distribution'] = 'apt/stable/'
 
-default['sublime_text']['packages'] = [
-  {
-    name: 'Neon Color Scheme',
-    url: 'https://github.com/MattDMo/Neon-color-scheme/archive/master.zip',
-  },
-]
+default['sublime_text']['packages'] = []
 
 default['sublime_text']['syntax_specific'] = {
   JSON: {
