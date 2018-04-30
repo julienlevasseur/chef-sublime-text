@@ -18,14 +18,6 @@ if node['sublime_text']['state'] == :present
       recursive true
     end
 
-#    remote_file "/home/#{user}/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" do
-#      source 'https://packagecontrol.io/Package%20Control.sublime-package'
-#      owner user
-#      group user
-#      mode '0644'
-#      action :create
-#    end
-
     directory "/home/#{user}/.config/sublime-text-3/Packages/User" do
       action :create
       recursive true
